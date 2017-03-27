@@ -1,0 +1,58 @@
+{
+  "name": "amplivar",
+  "title": "Amplivar",
+  "summary": "v1.0 - Amplivar",
+  "tags": [
+    "Cancer",
+    "VarScan"
+  ],
+    "properties": {
+    "github release": "v1.0"
+  },
+  "dxapi": "1.0.0",
+  "inputSpec": [
+    {
+      "name": "fastqs",
+      "label": "Reads",
+      "help": "A file, in gzipped FASTQ format, with the reads to be mapped (or the left reads, for paired pairs).",
+      "class": "array:file",
+      "patterns": ["*.fq.gz", "*.fastq.gz"]
+    }
+      ],
+  "outputSpec": [
+    {
+      "name": "amplivar_out",
+      "label": "amplivar_output",
+      "help": "All the amplivar_outputs.",
+      "class": "array:file"
+    } ,
+    {
+      "name": "vcfs",
+      "label": "vcfs",
+      "help": "vcfs.",
+      "class": "array:file"
+    }    
+  ],
+  "runSpec": {
+      "execDepends": [
+      {
+        "name": "openjdk-7-jre-headless"
+      },
+      {
+        "name": "openjdk-8-jre-headless"
+      }
+      ],
+      "systemRequirements": {
+      "main": {
+        "instanceType": "mem1_ssd1_x4"
+      }
+    },
+    "file": "src/code.sh",
+    "interpreter": "bash"
+  },
+  "access": {
+    "network": [  
+    "*"
+    ]
+  } 
+}
