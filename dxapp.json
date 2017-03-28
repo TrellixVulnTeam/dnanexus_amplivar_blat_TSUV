@@ -17,6 +17,42 @@
       "help": "A file, in gzipped FASTQ format, with the reads to be mapped (or the left reads, for paired pairs).",
       "class": "array:file",
       "patterns": ["*.fq.gz", "*.fastq.gz"]
+    },
+    {
+      "name": "usual_suspects",
+      "label": "usual suspects",
+      "help": "A text file containing known variants used to create a count for the number of reads containing wildtype and mutant alleles",
+      "class": "file"
+    },
+    {
+      "name": "minfreq",
+      "label": "minfreq",
+      "help": "Minimum reported variant frequency. If left blank Default=5.",
+      "optional":true,
+      "default":"20",
+      "class": "string"
+    },
+    {
+      "name": "mincov",
+      "label": "mincov",
+      "help": "Minimum coverage for variant calling. Default=10",
+      "optional": true,
+      "class": "string"
+    },
+    {
+      "name": "mincovvar",
+      "label": "mincovvar",
+      "help":"Minimum number reads containing the variant allele. Default=5",
+      "optional": true,
+      "class": "string"
+    },
+    {
+      "name": "keepfiles",
+      "label": "keepfiles",
+      "help": "Files to remove",
+      "optional": false,
+      "default":"1",
+      "class": "string"
     }
       ],
   "outputSpec": [
