@@ -52,7 +52,7 @@ nohup /home/dnanexus/amplivar/bin/linux/gfServer start localhost 8800 /home/dnan
 # run amplivar
 amplivar/bin/universal/amplivar_wrapper.sh -m VARIANT_CALLING -i /home/dnanexus/to_test  -o /home/dnanexus/out/amplivar_out/amplivar_out -s /home/dnanexus/amplivar/test/TruSeq_Cancer_genotype-lookup.txt -p /home/dnanexus/amplivar/test/TruSeq_Cancer_primer-flanks.txt -d TRUSEQ -t 3 -g /home/dnanexus/genome.fa -x localhost -y 8800 -1 20 -k 1
 
-##do VEP
+##copy the vcfs into a seperate output (potentially to feed into an annotator) - SHOULD THIS BE mv?
 for sample in /home/dnanexus/out/amplivar_out/amplivar_out/* ; do if [ -d "$sample" ]; then cp $sample/*.vcf /home/dnanexus/out/vcfs/vcfs/; fi; done
 
 dx-upload-all-outputs --parallel
