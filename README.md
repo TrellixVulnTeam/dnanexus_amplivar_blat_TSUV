@@ -3,7 +3,7 @@
 ## What does this app do?
 This app takes a list of fastq files and runs amplivar.
 
-Amplivar creates a list of unique reads and then performs variant calling using VarScan (v2.4.3)
+Amplivar creates a list of unique reads and then performs variant calling using VarScan2 (v2.4.3)
 
 ## What are typical use cases for this app?
 Analysis of cancer samples
