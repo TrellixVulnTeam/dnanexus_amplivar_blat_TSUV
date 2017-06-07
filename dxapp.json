@@ -1,10 +1,11 @@
 {
-  "name": "amplivar",
-  "title": "Amplivar",
-  "summary": "v1.0 - Amplivar",
+  "name": "amplivar-blat",
+  "title": "Amplivar-Blat",
+  "summary": "v1.1 - Amplivar complexity reduction with Blat alignment",
   "tags": [
     "Cancer",
-    "VarScan"
+    "Swift",
+    "Blat"
   ],
     "properties": {
     "github release": "v1.0"
@@ -16,7 +17,8 @@
       "label": "Reads",
       "help": "A file, in gzipped FASTQ format, with the reads to be mapped (or the left reads, for paired pairs).",
       "class": "array:file",
-      "patterns": ["*.fq.gz", "*.fastq.gz"]
+      "patterns": ["*.fq.gz", "*.fastq.gz"],
+      "optional": false
     },
     {
       "name": "usual_suspects",
@@ -25,11 +27,19 @@
       "class": "file"
     },
     {
+      "name": "amplicon-flank",
+      "label": "amplicon probes/flanking seq",
+      "help": "A text file containing the flanking sequence of each amplicon. Required for complexity reduction",
+      "class": "file",
+      "patterns": ["*.txt"],
+      "optional": false
+    },
+    {
       "name": "minfreq",
       "label": "minfreq",
-      "help": "Minimum reported variant frequency. If left blank Default=5.",
+      "help": "Minimum reported variant frequency. If blank default=5.",
       "optional":true,
-      "default":"20",
+      "default":"1",
       "class": "string"
     },
     {
@@ -45,27 +55,31 @@
       "help":"Minimum number reads containing the variant allele. Default=5",
       "optional": true,
       "class": "string"
-    },
-    {
-      "name": "keepfiles",
-      "label": "keepfiles",
-      "help": "Files to output",
-      "optional": false,
-      "default":"1",
-      "class": "string"
     }
       ],
   "outputSpec": [
+     {
+      "name": "bams",
+      "label": "inflated bamfiles, omitting index file",
+      "help": "inflated bamfiles to be passed on to variant callers, does not include index file.",
+      "class": "array:file"
+    },
+         {
+      "name": "coverage_rpt",
+      "label": "Coverage report summerising low coverage amplicons",
+      "help": "Report summerising the coverage observed per sample",
+      "class": "array:file"
+    },
+         {
+      "name": "coverage_tally",
+      "label": "All amplicons covereage tally",
+      "help": "Tally of the reads observed for each amplicon",
+      "class": "array:file"
+    },
     {
       "name": "amplivar_out",
       "label": "amplivar_output",
-      "help": "All the amplivar_outputs.",
-      "class": "array:file"
-    } ,
-    {
-      "name": "vcfs",
-      "label": "vcfs",
-      "help": "vcfs.",
+      "help": "All amplivar_outputs.",
       "class": "array:file"
     }    
   ],
