@@ -21,13 +21,14 @@
       "optional": false
     },
     {
-      "name": "usual_suspects",
-      "label": "usual suspects",
-      "help": "A text file containing known variants used to create a count for the number of reads containing wildtype and mutant alleles",
-      "class": "file"
+      "name": "ref_genome",
+      "label": "referance genome",
+      "help": "The reference fasta.  Should be indexed (.fai) [-G]",
+      "class": "file",
+      "optional": false
     },
     {
-      "name": "amplicon-flank",
+      "name": "ampliconflank",
       "label": "amplicon probes/flanking seq",
       "help": "A text file containing the flanking sequence of each amplicon. Required for complexity reduction",
       "class": "file",
@@ -35,9 +36,17 @@
       "optional": false
     },
     {
+      "name": "usual_suspects",
+      "label": "usual suspects",
+      "help": "A text file containing known variants used to create a count for the number of reads containing wildtype and mutant alleles",
+      "class": "file",
+      "patterns": ["*.txt"],
+      "optional": true
+    },
+    {
       "name": "minfreq",
       "label": "minfreq",
-      "help": "Minimum reported variant frequency. If blank default=5.",
+      "help": "Minimum reported variant frequency. Default = 1% if blank default will be =5%.",
       "optional":true,
       "default":"1",
       "class": "string"
@@ -64,15 +73,15 @@
       "help": "inflated bamfiles to be passed on to variant callers, does not include index file.",
       "class": "array:file"
     },
-         {
-      "name": "coverage_rpt",
-      "label": "Coverage report summerising low coverage amplicons",
-      "help": "Report summerising the coverage observed per sample",
+      {
+      "name": "bam_bai",
+      "label": "bam file indexs",
+      "help": "bam fle indexs",
       "class": "array:file"
     },
-         {
-      "name": "coverage_tally",
-      "label": "All amplicons covereage tally",
+      {
+      "name": "coverage_raw",
+      "label": "All raw read depth fot amplicons covereage",
       "help": "Tally of the reads observed for each amplicon",
       "class": "array:file"
     },
