@@ -13,13 +13,13 @@ Analysis of cancer samples
 * A list of fastq files.
 * A list of usual suspects
 * A list of amplicon flanking sequences (by default this is the file saved in 001_ToolsReferenceData)
-* Values for Minimum reported variant frequency (optional - default = 1%)
-* Values for Minimum coverage for variant calling (optional - default is to leave blank)
-* Values for Minimum number reads containing the variant allele (optional - default is to leave blank)
+* Value for minimum reported variant frequency as percentage of amplicon reads (optional - default = 1 (1%). If left blank uses amplivar default (5%))
+* Value for minimum coverage for variant calling (optional - leaving blank uses amplivar default of 10 (default))
+* Value for minimum number reads containing the variant allele (optional - leaving blank uses amplivar default of 5 (default))
 
 ## What does this app output?
 * A directory of bam files (in a folder called bam)
-* A directory of bam files indexs
+* A directory of bam files indexes
 * A directory containing coverage reports
 * A directory containing the read depth for each amplicon
 * One folder per sample including all other files created during analysis
