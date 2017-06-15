@@ -1,37 +1,38 @@
-# Amplivar v 1.0
+# Amplivar-Blat v 1.1
 
 ## What does this app do?
 This app takes a list of fastq files and runs amplivar.
 
-Amplivar creates a list of unique reads and then performs variant calling using VarScan2 (v2.4.3)
+Amplivar creates a list of unique reads and then performs alignment using Blat
 
 ## What are typical use cases for this app?
 Analysis of cancer samples
 
 ## What data are required for this app to run?
+* A indexed reference genome (`.tar.gz` format)
 * A list of fastq files.
-* A list of usual suspects (by default this is the file saved in 001_ToolsReferenceData)
-* Values for Minimum reported variant frequency (optional - default = 20)
-* Values for Minimum coverage for variant calling (optional - default is to leave blank)
-* Values for Minimum number reads containing the variant allele (optional - default is to leave blank)
-* Value for Keepfiles (required - default = 1)
-  * 1= keep all files
-  * 2= keep files required for reanalysis from checkpoint 1  
-  * 3= keep only bam, vcf and log files and move the files into BAM, LOG, VCF files directories  
+* A list of usual suspects
+* A list of amplicon flanking sequences (by default this is the file saved in 001_ToolsReferenceData)
+* Value for minimum reported variant frequency as percentage of amplicon reads (optional - default = 1 (1%). If left blank uses amplivar default (5%))
+* Value for minimum coverage for variant calling (optional - leaving blank uses amplivar default of 10 (default))
+* Value for minimum number reads containing the variant allele (optional - leaving blank uses amplivar default of 5 (default))
 
 ## What does this app output?
-* A list of vcfs (in a folder called vcfs)
-* One folder per sample including all the files created during analysis
+* A directory of bam files (in a folder called bam)
+* A directory of bam files indexes
+* A directory containing coverage reports
+* A directory containing the read depth for each amplicon
+* One folder per sample including all other files created during analysis
 
 ## How does this app work?
 1. Clone the github repo
-2. Download reference genome
-3. Create 2 bit reference
+2. Unzips reference genome
+3. Create 2 bit reference if not in referance genome input.
 4. Install cutadapt, Java
 5. Run BLAT server
 6. Download the list of usual suspects
 7. Run amplivar using -m Variant_Calling and arguments defined in inputs
 
 ## Custom modifications
-* This app uses a fork of Amplivar modified to use an updated version of VarScan (https://github.com/moka-guys/amplivar)
+* This app uses a copy of Amplivar (https://github.com/moka-guys/amplivar) modified to excluded variant calling (https://github.com/moka-guys/amplivar_blat)
 * The app was made by the Viapath Genome Informatics section 
