@@ -1,4 +1,4 @@
-# Amplivar-Blat v 1.1
+# Amplivar-Blat v 1.2
 
 ## What does this app do?
 This app takes a list of fastq files and runs amplivar.

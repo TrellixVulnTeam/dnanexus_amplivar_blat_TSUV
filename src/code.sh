@@ -17,7 +17,7 @@ dx-download-all-inputs --except ref_genome --parallel
 #make directory to hold input fastqs 
 mkdir to_test
 #make output folders
-mkdir -p out/bams/bams/ out/amplivar_out/amplivar_out out/coverage_raw/coverage_raw out/bam_bai/bam_bai
+mkdir -p out/bams/bams/ out/amplivar_out/amplivar_out out/coverage_raw/coverage_raw out/bam_bai/bams
 
 #move all fastq inputs
 for input in /home/dnanexus/in/fastqs/*; do if [ -d "$input" ]; then mv $input/* to_test/; fi; done
@@ -97,7 +97,7 @@ amplivar_blat/bin/universal/amplivar_wrapper.sh -m VARIANT_CALLING -i /home/dnan
 for sample in /home/dnanexus/out/amplivar_out/amplivar_out/* ; 
 do if [ -d "$sample" ]; then 
 mv $sample/*.blat.bam /home/dnanexus/out/bams/bams/ 
-mv $sample/*.bam.bai out/bam_bai/bam_bai/
+mv $sample/*.bam.bai out/bam_bai/bams/
 mv $sample/flanked/*_flanked.txt out/coverage_raw/coverage_raw/;
 fi; done
 
