@@ -1,14 +1,14 @@
 {
   "name": "amplivar-blat",
   "title": "Amplivar-Blat",
-  "summary": "v1.2 - Amplivar complexity reduction with Blat alignment",
+  "summary": "v1.3 - Amplivar complexity reduction with Blat alignment",
   "tags": [
     "Cancer",
     "Swift",
     "Blat"
   ],
     "properties": {
-    "github release": "v1.2"
+    "github release": "v1.3"
   },
   "dxapi": "1.0.0",
   "inputSpec": [

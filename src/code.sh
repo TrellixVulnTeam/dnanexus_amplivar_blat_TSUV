@@ -17,7 +17,7 @@ dx-download-all-inputs --except ref_genome --parallel
 #make directory to hold input fastqs 
 mkdir to_test
 #make output folders
-mkdir -p out/bams/bams/ out/amplivar_out/amplivar_out out/coverage_raw/coverage_raw out/bam_bai/bams
+mkdir -p out/bams/bams/ out/amplivar_out/amplivar_out out/coverage_raw/coverage_raw out/bam_bai/bams amplivar_temp
 
 #move all fastq inputs
 for input in /home/dnanexus/in/fastqs/*; do if [ -d "$input" ]; then mv $input/* to_test/; fi; done
@@ -86,19 +86,23 @@ if [[ "$mincovvar" != "" ]]
 fi
 
 # run amplivar-blat
-amplivar_blat/bin/universal/amplivar_wrapper.sh -m VARIANT_CALLING -i /home/dnanexus/to_test -o /home/dnanexus/out/amplivar_out/amplivar_out $suspects -p $ampliconflank_path -d TRUSEQ -t $cores -g $genome_file -x localhost -y 8800 $opts
+amplivar_blat/bin/universal/amplivar_wrapper.sh -m VARIANT_CALLING -i /home/dnanexus/to_test -o /home/dnanexus/amplivar_temp $suspects -p $ampliconflank_path -d TRUSEQ -t $cores -g $genome_file -x localhost -y 8800 $opts
 
 # view ampliva logs - for trouble shooting
 # for sample in /home/dnanexus/out/amplivar_out/amplivar_out/* ;
 # do cat $sample/*_L001.log
 # done
 
+
 ## move the bams, coverage reports and coverage data into a seperate outputs (potentially to feed into an annotator) 
-for sample in /home/dnanexus/out/amplivar_out/amplivar_out/* ; 
+for sample in /home/dnanexus/amplivar_temp/* ; 
 do if [ -d "$sample" ]; then 
+samplename=$(basename $sample)
+tar -zcvf /home/dnanexus/out/amplivar_out/amplivar_out/$samplename.amplivar_out.tar.gz $sample
 mv $sample/*.blat.bam /home/dnanexus/out/bams/bams/ 
 mv $sample/*.bam.bai out/bam_bai/bams/
 mv $sample/flanked/*_flanked.txt out/coverage_raw/coverage_raw/;
 fi; done
+
 
 dx-upload-all-outputs --parallel
