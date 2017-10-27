@@ -25,8 +25,17 @@ for input in /home/dnanexus/in/fastqs/*; do if [ -d "$input" ]; then mv $input/*
 # clone amplivar
 git clone https://github.com/moka-guys/amplivar_blat.git
 
+# add miniconda to path to ensure correct version of python is used.
+PATH=/home/dnanexus/miniconda2/bin:$PATH
+
+#pip --version
+#update pip
+#sudo pip install --upgrade pip
+
 # install cutadapt
-sudo pip install cutadapt
+#sudo pip install cutadapt
+conda config --add channels bioconda
+conda install -c bioconda cutadapt
 # install python modules pyvcf and pandas for coverage rpt
 # sudo pip install pyvcf
 # sudo pip install pandas

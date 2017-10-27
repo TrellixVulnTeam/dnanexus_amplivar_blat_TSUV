@@ -1,14 +1,14 @@
 {
   "name": "amplivar-blat",
   "title": "Amplivar-Blat",
-  "summary": "v1.3 - Amplivar complexity reduction with Blat alignment",
+  "summary": "v1.4 - Amplivar complexity reduction with Blat alignment",
   "tags": [
     "Cancer",
     "Swift",
     "Blat"
   ],
-    "properties": {
-    "github release": "v1.3"
+  "properties": {
+    "github release": "v1.4"
   },
   "dxapi": "1.0.0",
   "inputSpec": [
@@ -47,39 +47,39 @@
       "name": "minfreq",
       "label": "minfreq",
       "help": "Minimum reported variant frequency. Default = 1% if blank default will be =5%.",
-      "optional":true,
-      "default":"1",
-      "class": "string"
+      "class": "string",
+      "optional": true,
+      "default": "1"
     },
     {
       "name": "mincov",
       "label": "mincov",
       "help": "Minimum coverage for variant calling. Default=10",
-      "optional": true,
-      "class": "string"
+      "class": "string",
+      "optional": true
     },
     {
       "name": "mincovvar",
       "label": "mincovvar",
-      "help":"Minimum number reads containing the variant allele. Default=5",
-      "optional": true,
-      "class": "string"
+      "help": "Minimum number reads containing the variant allele. Default=5",
+      "class": "string",
+      "optional": true
     }
-      ],
+  ],
   "outputSpec": [
-     {
+    {
       "name": "bams",
       "label": "inflated bamfiles, omitting index file",
       "help": "inflated bamfiles to be passed on to variant callers, does not include index file.",
       "class": "array:file"
     },
-      {
+    {
       "name": "bam_bai",
       "label": "bam file indexs",
       "help": "bam fle indexs",
       "class": "array:file"
     },
-      {
+    {
       "name": "coverage_raw",
       "label": "All raw read depth fot amplicons covereage",
       "help": "Tally of the reads observed for each amplicon",
@@ -90,18 +90,25 @@
       "label": "amplivar_output",
       "help": "All amplivar_outputs.",
       "class": "array:file"
-    }    
+    }
   ],
   "runSpec": {
-      "execDepends": [
+    "execDepends": [
       {
         "name": "openjdk-7-jre-headless"
       },
       {
         "name": "openjdk-8-jre-headless"
       }
-      ],
-      "systemRequirements": {
+    ],
+    "systemRequirementsByRegion": {
+      "aws:us-east-1": {
+        "main": {
+          "instanceType": "mem1_ssd1_x4"
+        }
+      }
+    },
+    "systemRequirements": {
       "main": {
         "instanceType": "mem1_ssd1_x4"
       }
@@ -110,8 +117,8 @@
     "interpreter": "bash"
   },
   "access": {
-    "network": [  
-    "*"
+    "network": [
+      "*"
     ]
-  } 
+  }
 }
