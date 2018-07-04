@@ -1,0 +1,48 @@
+# This file created by conda-build 2.1.15
+# meta.yaml template originally from:
+# /opt/recipe, last modified Fri Jun 23 13:49:58 2017
+# ------------------------------------------------
+
+package:
+    name: cutadapt
+    version: '1.14'
+source:
+    fn: cutadapt-1.14.tar.gz
+    md5: 57403c3794aa940699df3032a5e9b208
+    url: https://pypi.python.org/packages/16/e3/06b45eea35359833e7c6fac824b604f1551c2fc7ba0f2bd318d8dd883eb9/cutadapt-1.14.tar.gz
+build:
+    noarch: ''
+    noarch_python: false
+    number: '0'
+    script: $PYTHON setup.py install
+    string: py27_0
+requirements:
+    build:
+        - readline 6.2 0
+        - certifi 2017.4.17 py27_0
+        - xopen 0.1.1 py27_0
+        - ca-certificates 2017.4.17 0
+        - wheel 0.29.0 py27_0
+        - python 2.7.13 1
+        - ncurses 5.9 10
+        - tk 8.5.19 1
+        - openssl 1.0.2k 0
+        - zlib 1.2.11 0
+        - setuptools 33.1.1 py27_0
+        - pip 9.0.1 py27_0
+        - sqlite 3.13.0 1
+    run:
+        - python
+        - xopen >=0.1.1
+test:
+    commands:
+        - cutadapt --version
+    imports:
+        - cutadapt
+        - cutadapt.scripts
+about:
+    home: https://cutadapt.readthedocs.io/
+    license: MIT License
+    summary: trim adapters from high-throughput sequencing reads
+extra:
+    final: true

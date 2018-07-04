@@ -1,0 +1,35 @@
+{
+  "arch": "x86_64", 
+  "build": "py27_0", 
+  "build_number": 0, 
+  "channel": "https://repo.continuum.io/pkgs/free/linux-64", 
+  "date": "2015-07-13", 
+  "depends": [
+    "python 2.7*"
+  ], 
+  "files": [
+    "lib/python2.7/site-packages/bz2file-0.98-py2.7.egg-info", 
+    "lib/python2.7/site-packages/bz2file.py", 
+    "lib/python2.7/site-packages/bz2file.pyc"
+  ], 
+  "fn": "bz2file-0.98-py27_0.tar.bz2", 
+  "license": "Apache License, Version 2.0", 
+  "license_family": "Apache", 
+  "link": {
+    "source": "/home/dnanexus/miniconda2/pkgs/bz2file-0.98-py27_0", 
+    "type": "hard-link"
+  }, 
+  "md5": "747716b88bb418c77516119cde7469a3", 
+  "name": "bz2file", 
+  "platform": "linux", 
+  "priority": 2, 
+  "requires": [
+    "python 2.7"
+  ], 
+  "schannel": "defaults", 
+  "size": 10276, 
+  "subdir": "linux-64", 
+  "ucs": 4, 
+  "url": "https://repo.continuum.io/pkgs/free/linux-64/bz2file-0.98-py27_0.tar.bz2", 
+  "version": "0.98"
+}

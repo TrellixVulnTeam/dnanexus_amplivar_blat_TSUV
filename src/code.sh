@@ -33,8 +33,8 @@ PATH=/home/dnanexus/miniconda2/bin:$PATH
 
 # install cutadapt - pip stopped working so use conda, specifically bioconda channel
 #sudo pip install cutadapt
-conda config --add channels bioconda
-conda install -c bioconda cutadapt=1.14
+#conda config --add channels bioconda
+#conda install -c bioconda cutadapt=1.14 xopen=0.3.2=py27_0
 
 # create directory for reference genome, un-package reference genome
 mkdir genome
