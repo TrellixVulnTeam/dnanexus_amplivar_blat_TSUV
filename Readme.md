@@ -36,4 +36,4 @@ Analysis of cancer samples
 
 ## Custom modifications
 * This app uses a copy of Amplivar modified to exclude variant calling (https://github.com/moka-guys/amplivar_blat)
-* The app was made by the Viapath Genome Informatics
+* The app was made by Viapath Genome Informatics

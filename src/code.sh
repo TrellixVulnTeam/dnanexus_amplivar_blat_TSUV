@@ -24,17 +24,16 @@ for input in /home/dnanexus/in/fastqs/*; do if [ -d "$input" ]; then mv $input/*
 
 # clone amplivar
 git clone https://github.com/moka-guys/amplivar_blat.git
+
+# change into the directory in order to change branch
 cd amplivar_blat
+# use the git_branch variable to change the branch
 git checkout $git_branch
+# cd up a level
 cd ..
 
 # add miniconda to path to ensure correct installation of python is used.
 PATH=/home/dnanexus/miniconda2/bin:$PATH
-
-# install cutadapt - pip stopped working so use conda, specifically bioconda channel
-#sudo pip install cutadapt
-#conda config --add channels bioconda
-#conda install -c bioconda cutadapt=1.14 xopen=0.3.2=py27_0
 
 # create directory for reference genome, un-package reference genome
 mkdir genome
@@ -55,10 +54,14 @@ export SHELL=/bin/bash
 
 # start blat server
 nohup /home/dnanexus/amplivar_blat/bin/linux/gfServer start localhost 8802 /home/dnanexus/genome/*.2bit &
+# some issues were caused because the blat server wasn't up and running so wait 100 seconds
 sleep 100
+# using an example fasta file perform an alignment using the blat server using exact command used by amplivar
+# input file is test_blat_server.fna (package up in app)
+# set output file as test_blat_server.blat.pslx 
 /home/dnanexus/amplivar_blat/bin/linux/gfClient -out=pslx -nohead localhost 8802 "" test_blat_server.fna test_blat_server.blat.pslx 
+# print the result to screen
 cat test_blat_server.blat.pslx
-rm test_blat_server.blat.pslx
 
 #number of cores
 cores=$(nproc --all)
