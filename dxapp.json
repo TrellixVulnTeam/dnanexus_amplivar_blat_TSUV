@@ -1,14 +1,14 @@
 {
-  "name": "amplivar-blat_v1.5",
-  "title": "Amplivar Blat v1.5",
-  "summary": "v1.5 - Amplivar complexity reduction with Blat alignment",
+  "name": "amplivar-blat_v1.6",
+  "title": "Amplivar Blat v1.6",
+  "summary": "v1.6 - Amplivar complexity reduction with Blat alignment",
   "tags": [
     "Cancer",
     "Swift",
     "Blat"
   ],
   "properties": {
-    "github release": "v1.5"
+    "github release": "v1.6"
   },
   "dxapi": "1.0.0",
   "inputSpec": [
@@ -22,7 +22,7 @@
     },
     {
       "name": "ref_genome",
-      "label": "referance genome",
+      "label": "reference genome",
       "help": "The reference fasta.  Should be indexed (.fai) [-G]",
       "class": "file",
       "optional": false
@@ -64,24 +64,32 @@
       "help": "Minimum number reads containing the variant allele. Default=5",
       "class": "string",
       "optional": true
+    },
+    {
+      "name": "git_branch",
+      "label": "git_branch",
+      "help": "branch of amplivar_blat to download",
+      "class": "string",
+      "optional": false,
+      "default": "master"
     }
   ],
   "outputSpec": [
     {
       "name": "bams",
-      "label": "inflated bamfiles, omitting index file",
+      "label": "inflated bamfiles",
       "help": "inflated bamfiles to be passed on to variant callers, does not include index file.",
       "class": "array:file"
     },
     {
       "name": "bam_bai",
-      "label": "bam file indexs",
-      "help": "bam fle indexs",
+      "label": "bam file indexes",
+      "help": "bam fle indexes",
       "class": "array:file"
     },
     {
       "name": "coverage_raw",
-      "label": "All raw read depth fot amplicons covereage",
+      "label": "All raw read depth for amplicons covereage",
       "help": "Tally of the reads observed for each amplicon",
       "class": "array:file"
     },
@@ -99,28 +107,29 @@
       },
       {
         "name": "openjdk-8-jre-headless"
+      },
+      {
+        "name": "dos2unix",
+        "version": "6.0.4-1"
       }
     ],
-    "systemRequirementsByRegion": {
-      "aws:us-east-1": {
-        "main": {
-          "instanceType": "mem1_ssd1_x4"
-        }
-      }
-    },
-    "systemRequirements": {
-      "main": {
-        "instanceType": "mem1_ssd1_x4"
-      }
-    },
-    "distribution" : "Ubuntu",
-    "release" : "14.04",
     "file": "src/code.sh",
-    "interpreter": "bash"
+    "release": "14.04",
+    "interpreter": "bash",
+    "distribution": "Ubuntu"
   },
   "access": {
     "network": [
       "*"
     ]
+  },
+  "regionalOptions": {
+    "aws:us-east-1": {
+      "systemRequirements": {
+        "main": {
+          "instanceType": "mem1_ssd1_x4"
+        }
+      }
+    }
   }
 }

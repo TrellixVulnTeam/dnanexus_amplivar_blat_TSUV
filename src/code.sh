@@ -24,6 +24,9 @@ for input in /home/dnanexus/in/fastqs/*; do if [ -d "$input" ]; then mv $input/*
 
 # clone amplivar
 git clone https://github.com/moka-guys/amplivar_blat.git
+cd amplivar_blat
+git checkout $git_branch
+cd ..
 
 # add miniconda to path to ensure correct installation of python is used.
 PATH=/home/dnanexus/miniconda2/bin:$PATH
@@ -31,7 +34,7 @@ PATH=/home/dnanexus/miniconda2/bin:$PATH
 # install cutadapt - pip stopped working so use conda, specifically bioconda channel
 #sudo pip install cutadapt
 conda config --add channels bioconda
-conda install -c bioconda cutadapt
+conda install -c bioconda cutadapt=1.14
 
 # create directory for reference genome, un-package reference genome
 mkdir genome
@@ -51,7 +54,11 @@ export TERM=xterm
 export SHELL=/bin/bash
 
 # start blat server
-nohup /home/dnanexus/amplivar_blat/bin/linux/gfServer start localhost 8800 /home/dnanexus/genome/*.2bit  &
+nohup /home/dnanexus/amplivar_blat/bin/linux/gfServer start localhost 8802 /home/dnanexus/genome/*.2bit &
+sleep 100
+/home/dnanexus/amplivar_blat/bin/linux/gfClient -out=pslx -nohead localhost 8802 "" test_blat_server.fna test_blat_server.blat.pslx 
+cat test_blat_server.blat.pslx
+rm test_blat_server.blat.pslx
 
 #number of cores
 cores=$(nproc --all)
@@ -87,8 +94,11 @@ if [[ "$mincovvar" != "" ]]
 	opts="$opts -3 $mincovvar"
 fi
 
+# convert flanking file from dos2unix (just incase)
+dos2unix $ampliconflank_path
+
 # run amplivar-blat
-amplivar_blat/bin/universal/amplivar_wrapper.sh -m VARIANT_CALLING -i /home/dnanexus/to_test -o /home/dnanexus/amplivar_temp $suspects -p $ampliconflank_path -d TRUSEQ -t $cores -g $genome_file -x localhost -y 8800 $opts
+amplivar_blat/bin/universal/amplivar_wrapper.sh -m VARIANT_CALLING -i /home/dnanexus/to_test -o /home/dnanexus/amplivar_temp $suspects -p $ampliconflank_path -d TRUSEQ -t $cores -g $genome_file -x localhost -y 8802 $opts
 
 # view ampliva logs - for trouble shooting
 # for sample in /home/dnanexus/out/amplivar_out/amplivar_out/* ;
