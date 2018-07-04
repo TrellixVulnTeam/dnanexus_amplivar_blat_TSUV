@@ -26,14 +26,13 @@ Analysis of cancer samples
 
 ## How does this app work?
 1. Clone the amplivar github repo and checks out the specified branch
-2. Install cutadapt, specifying the version to remove dependancy issues.
-3. Downloads and unzips reference genome
-4. If required makes 2 bit reference file.
-5. Run BLAT server
-6. Test the BLAT server is working using a example fasta file
-7. converts the encoding of the flanking file using dos2unix, as this can cause the app to fail
-8. Run amplivar using -m Variant_Calling and arguments defined in inputs
-9. To speed up the upload of the many files produced by amplivar these are zipped on a sample by sample basis.
+2. Downloads and unzips reference genome
+3. If required makes 2 bit reference file.
+4. Run BLAT server
+5. Test the BLAT server is working using a example fasta file
+6. converts the encoding of the flanking file using dos2unix, as this can cause the app to fail
+7. Run amplivar using -m Variant_Calling and arguments defined in inputs
+8. To speed up the upload of the many files produced by amplivar these are zipped on a sample by sample basis.
 
 ## Custom modifications
 * This app uses a copy of Amplivar modified to exclude variant calling (https://github.com/moka-guys/amplivar_blat)
