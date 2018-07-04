@@ -1,0 +1,125 @@
+{
+  "paths": [
+    {
+      "_path": "lib/python2.7/site-packages/idna-2.6-py2.7.egg-info/PKG-INFO",
+      "path_type": "hardlink",
+      "sha256": "7f0d7f04f88c169a55b3fa23a9815118ccb00ebf9faf551b7de966bd9b363deb",
+      "size_in_bytes": 10565
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna-2.6-py2.7.egg-info/SOURCES.txt",
+      "path_type": "hardlink",
+      "sha256": "59c1164c4db79a46ca702a340f9cfe1e45ee3fc62c9a871a57b950bb415a1236",
+      "size_in_bytes": 504
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna-2.6-py2.7.egg-info/dependency_links.txt",
+      "path_type": "hardlink",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size_in_bytes": 1
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna-2.6-py2.7.egg-info/top_level.txt",
+      "path_type": "hardlink",
+      "sha256": "8d26a0f6c103aaf48f7edc4e432f8005f195fd14b2ee8161e33649a4e0d5f24d",
+      "size_in_bytes": 5
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "f4db7bc69c9eb770e63ab3d41a8a03740c261d966ed6a500cb611a27dde41a24",
+      "size_in_bytes": 58
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/__init__.pyc",
+      "path_type": "hardlink",
+      "sha256": "d0f0ab136bb5ab3fbb2bbf823f64cf98fa45edf1859c7a057ea38a0ea4f8ac7a",
+      "size_in_bytes": 227
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/codec.py",
+      "path_type": "hardlink",
+      "sha256": "96f61bef2bbb3e102a15a00801d59cc2069623652682c794b9afb573402c1b40",
+      "size_in_bytes": 3299
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/codec.pyc",
+      "path_type": "hardlink",
+      "sha256": "a8aca4b56a9f823df95b7daff751eda853b146e1e4c0b0a0a643c2ccae749fb4",
+      "size_in_bytes": 3782
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/compat.py",
+      "path_type": "hardlink",
+      "sha256": "47e876f43fba9ab9c9cdb5f1ca6ad6516ee2654bf2fb6e934306748a3e7b8b85",
+      "size_in_bytes": 232
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/compat.pyc",
+      "path_type": "hardlink",
+      "sha256": "5120dd2f30e4e890060b9dd4dfe3ebaeab21a5fd17a5b50d789b08092eff7e28",
+      "size_in_bytes": 743
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/core.py",
+      "path_type": "hardlink",
+      "sha256": "19a7e259d61020ae534a359d4730980a1a3bd3800bb4c0ab57f7675d79f9ed4d",
+      "size_in_bytes": 11390
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/core.pyc",
+      "path_type": "hardlink",
+      "sha256": "391d69bdb7f7c68620bfe18d9c24be8a1dae3c79d0530487bc0511db51c1b940",
+      "size_in_bytes": 11382
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/idnadata.py",
+      "path_type": "hardlink",
+      "sha256": "f8283cde5bab2a803da7b95bd25300b28b34ac5cf57672ab19e044de8f14b820",
+      "size_in_bytes": 32999
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/idnadata.pyc",
+      "path_type": "hardlink",
+      "sha256": "e4ac5fb36947fd2a0ab42c0eabcce981f367db307d4ac0b3bf2ef476ddc9b41a",
+      "size_in_bytes": 28538
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/intranges.py",
+      "path_type": "hardlink",
+      "sha256": "4d8d65a7164841610fead36a8d9905039860a0c58e8f53819a7506f22853f3b1",
+      "size_in_bytes": 1749
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/intranges.pyc",
+      "path_type": "hardlink",
+      "sha256": "bb548927bf6ec936752ebf378b88b0d6e322259f058d77022e1db10c890b0f2e",
+      "size_in_bytes": 2132
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/package_data.py",
+      "path_type": "hardlink",
+      "sha256": "28c4944d2fcced967b52097f57f10ec55f83de8eefef2564b78e492bf6e95b6e",
+      "size_in_bytes": 21
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/package_data.pyc",
+      "path_type": "hardlink",
+      "sha256": "8a7c059b56661a7129b1482141e9a6bfd734fc8b7817a9d6be199af3391dcbea",
+      "size_in_bytes": 165
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/uts46data.py",
+      "path_type": "hardlink",
+      "sha256": "6329506017e58c0c7f595a91d83ec781c186c95096c0f9bab85dfc68446e872c",
+      "size_in_bytes": 184944
+    },
+    {
+      "_path": "lib/python2.7/site-packages/idna/uts46data.pyc",
+      "path_type": "hardlink",
+      "sha256": "d7694ab2edf79aff67b69306b5c8c841953c2448ec1b456e1302e469253560fc",
+      "size_in_bytes": 272293
+    }
+  ],
+  "paths_version": 1
+}

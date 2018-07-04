@@ -1,0 +1,25 @@
+{
+  "paths": [
+    {
+      "_path": "bin/cutadapt",
+      "file_mode": "text",
+      "path_type": "hardlink",
+      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+      "sha256": "f534679cdd1a56f033ca1a7dcc3d5cd6a0ab4515b5630c3771dfbc6760e6d232",
+      "size_in_bytes": 411
+    },
+    {
+      "_path": "lib/python2.7/site-packages/cutadapt-1.14-py2.7-linux-x86_64.egg",
+      "path_type": "hardlink",
+      "sha256": "843e7089d0be4690d21a79437e8b9a6956e8c8ace646eb72905e20c48d461499",
+      "size_in_bytes": 437107
+    },
+    {
+      "_path": "lib/python2.7/site-packages/cutadapt.pth",
+      "path_type": "hardlink",
+      "sha256": "0fde46c03a3962536d07da953f59299b11f5277a6728a0c9495e163d9f4df5f3",
+      "size_in_bytes": 39
+    }
+  ],
+  "paths_version": 1
+}

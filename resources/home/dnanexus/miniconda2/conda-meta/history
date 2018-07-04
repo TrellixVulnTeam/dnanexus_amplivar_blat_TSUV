@@ -27,3 +27,24 @@ zlib-1.2.8-3
 +conda-4.2.13-py27_0
 +libgcc-5.2.0-0
 # install specs: ['sambamba', 'conda', 'conda-env']
+==> 2018-07-04 10:52:23 <==
+# cmd: ./conda install -c bioconda cutadapt=1.14 xopen=0.3.2=py27_0
+-conda-4.2.13-py27_0
+-requests-2.11.1-py27_0
++asn1crypto-0.22.0-py27_0
++bioconda::cutadapt-1.14-py27_0
++bioconda::xopen-0.3.2-py27_0
++bz2file-0.98-py27_0
++cffi-1.10.0-py27_0
++conda-4.3.30-py27h6ae6dc7_0
++cryptography-1.8.1-py27_0
++idna-2.6-py27_0
++ipaddress-1.0.18-py27_0
++libffi-3.2.1-1
++packaging-16.8-py27_0
++pycparser-2.18-py27_0
++pyopenssl-17.0.0-py27_0
++pyparsing-2.2.0-py27_0
++requests-2.14.2-py27_0
++six-1.10.0-py27_0
+# install specs: ['cutadapt 1.14*', 'xopen 0.3.2 py27_0', 'conda', 'conda-env']

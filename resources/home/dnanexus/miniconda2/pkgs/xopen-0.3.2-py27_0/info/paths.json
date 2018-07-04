@@ -1,0 +1,17 @@
+{
+  "paths": [
+    {
+      "_path": "lib/python2.7/site-packages/xopen-0.3.2-py2.7.egg",
+      "path_type": "hardlink",
+      "sha256": "c53b41cc63e56142a782bd7ff518da6bef94bb1c3b841663142141aeca54301f",
+      "size_in_bytes": 8506
+    },
+    {
+      "_path": "lib/python2.7/site-packages/xopen.pth",
+      "path_type": "hardlink",
+      "sha256": "0923cd3e3282e0340b2b71da3eb1e70fac90165dc08853bdfe92a788d7e33b61",
+      "size_in_bytes": 24
+    }
+  ],
+  "paths_version": 1
+}

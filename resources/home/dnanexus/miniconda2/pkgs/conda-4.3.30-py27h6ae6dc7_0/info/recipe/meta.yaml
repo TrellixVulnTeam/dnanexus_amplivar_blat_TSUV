@@ -1,0 +1,134 @@
+# This file created by conda-build 3.0.27
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/conda-4.3.30-python2.7-on-linux-64, last modified Tue Oct 17 20:11:53 2017
+# ------------------------------------------------
+
+package:
+    name: conda
+    version: 4.3.30
+source:
+    fn: conda-4.3.30.tar.gz
+    sha256: 67ad83784503eefdf5380254226b1a515c7de14c88aacaaed31d9489a15d243d
+    url: https://github.com/conda/conda/archive/4.3.30.tar.gz
+build:
+    always_include_files:
+        - bin/activate
+        - bin/conda
+        - bin/deactivate
+    entry_points:
+        - conda = conda.cli:main
+        - conda-env = conda_env.cli.main:main
+    number: '0'
+    string: py27h6ae6dc7_0
+requirements:
+    build:
+        - asn1crypto 0.22.0 py27h94ebe91_1
+        - ca-certificates 2017.08.26 h1d4fec5_0
+        - certifi 2017.7.27.1 py27h9ceb091_0
+        - cffi 1.10.0 py27hf1aaaf4_1
+        - chardet 3.0.4 py27hfa10054_1
+        - cryptography 2.0.3 py27hea39389_1
+        - enum34 1.1.6 py27h99a27e9_1
+        - idna 2.6 py27h5722d68_1
+        - ipaddress 1.0.18 py27h337fd85_0
+        - libedit 3.1 heed3624_0
+        - libffi 3.2.1 h4deb6c0_3
+        - libgcc-ng 7.2.0 h7cc24e2_2
+        - libstdcxx-ng 7.2.0 h7a57d05_2
+        - ncurses 6.0 h06874d7_1
+        - openssl 1.0.2l h077ae2c_5
+        - pycosat 0.6.2 py27h1cf261c_1
+        - pycparser 2.18 py27hefa08c5_1
+        - pyopenssl 17.2.0 py27h189ff3b_0
+        - pysocks 1.6.7 py27he2db6d2_1
+        - python 2.7.14 hc2b0042_21
+        - readline 7.0 hac23ff0_3
+        - requests 2.18.4 py27hc5b0589_1
+        - ruamel_yaml 0.11.14 py27h672d447_2
+        - six 1.10.0 py27hdcd7534_1
+        - sqlite 3.20.1 h6d8b0f3_1
+        - tk 8.6.7 h5979e9b_1
+        - urllib3 1.22 py27ha55213b_0
+        - yaml 0.1.7 h96e3832_1
+        - zlib 1.2.11 hfbfcf68_1
+    host:
+        - asn1crypto 0.22.0 py27h94ebe91_1
+        - ca-certificates 2017.08.26 h1d4fec5_0
+        - certifi 2017.7.27.1 py27h9ceb091_0
+        - cffi 1.10.0 py27hf1aaaf4_1
+        - chardet 3.0.4 py27hfa10054_1
+        - cryptography 2.0.3 py27hea39389_1
+        - enum34 1.1.6 py27h99a27e9_1
+        - idna 2.6 py27h5722d68_1
+        - ipaddress 1.0.18 py27h337fd85_0
+        - libedit 3.1 heed3624_0
+        - libffi 3.2.1 h4deb6c0_3
+        - libgcc-ng 7.2.0 h7cc24e2_2
+        - libstdcxx-ng 7.2.0 h7a57d05_2
+        - ncurses 6.0 h06874d7_1
+        - openssl 1.0.2l h077ae2c_5
+        - pycosat 0.6.2 py27h1cf261c_1
+        - pycparser 2.18 py27hefa08c5_1
+        - pyopenssl 17.2.0 py27h189ff3b_0
+        - pysocks 1.6.7 py27he2db6d2_1
+        - python 2.7.14 hc2b0042_21
+        - readline 7.0 hac23ff0_3
+        - requests 2.18.4 py27hc5b0589_1
+        - ruamel_yaml 0.11.14 py27h672d447_2
+        - six 1.10.0 py27hdcd7534_1
+        - sqlite 3.20.1 h6d8b0f3_1
+        - tk 8.6.7 h5979e9b_1
+        - urllib3 1.22 py27ha55213b_0
+        - yaml 0.1.7 h96e3832_1
+        - zlib 1.2.11 hfbfcf68_1
+    run:
+        - conda-env >=2.6
+        - enum34
+        - pycosat >=0.6.1
+        - pyopenssl >=16.2.0
+        - python >=2.7,<2.8.0a0
+        - requests >=2.12.4
+        - ruamel_yaml >=0.11.14
+test:
+    commands:
+        - python -c "from __future__ import print_function; import conda; print(conda.__version__)"
+        - which conda
+        - which conda-env
+        - conda --version
+        - conda info
+        - conda env --help
+    imports:
+        - conda
+about:
+    description: 'Conda is an open source package management system and environment
+
+        management system for installing multiple versions of software packages
+
+        and their dependencies and switching easily between them. It works on
+
+        Linux, OS X and Windows, and was created for Python programs but can
+
+        package and distribute any software.
+
+        '
+    dev_url: https://github.com/conda/conda
+    doc_url: http://conda.pydata.org/docs/
+    home: http://conda.pydata.org/
+    license: BSD 3-Clause
+    license_file: LICENSE.txt
+    summary: OS-agnostic, system-level binary package and environment manager.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - jakirkham
+        - jjhelmus
+        - kalefranz
+        - mcg1969
+        - mingwandroid
+        - msarahan
+        - mwcraig
+        - ocefpaf
+        - patricksnape
+        - pelson
+        - scopatz

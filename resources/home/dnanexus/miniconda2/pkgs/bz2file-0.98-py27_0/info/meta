@@ -1,0 +1,7 @@
+pkg: bz2file-0.98
+dist: bz2file-0.98-py27_0
+home: https://github.com/nvawda/bz2file
+license: Apache License, Version 2.0
+has_bin: False
+has_lib: False
+has_py: True

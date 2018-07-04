@@ -1,0 +1,39 @@
+{
+  "arch": "x86_64", 
+  "binstar": {
+    "channel": "main", 
+    "owner_id": "55f35cc885a76554d7c66613", 
+    "package_id": "57db0d032dfbcc371465ae09"
+  }, 
+  "build": "py27_0", 
+  "build_number": 0, 
+  "channel": "https://conda.anaconda.org/bioconda/linux-64", 
+  "depends": [
+    "bz2file", 
+    "python 2.7*"
+  ], 
+  "files": [
+    "lib/python2.7/site-packages/xopen.pth", 
+    "lib/python2.7/site-packages/xopen-0.3.2-py2.7.egg"
+  ], 
+  "fn": "xopen-0.3.2-py27_0.tar.bz2", 
+  "has_prefix": false, 
+  "license": "MIT", 
+  "link": {
+    "source": "/home/dnanexus/miniconda2/pkgs/xopen-0.3.2-py27_0", 
+    "type": "hard-link"
+  }, 
+  "machine": "x86_64", 
+  "md5": "fb36035c5666aa7d90a849a0c941c2c4", 
+  "name": "xopen", 
+  "operatingsystem": "linux", 
+  "platform": "linux", 
+  "priority": 0, 
+  "requires": [], 
+  "schannel": "bioconda", 
+  "size": 12343, 
+  "subdir": "linux-64", 
+  "target-triplet": "x86_64-any-linux", 
+  "url": "https://conda.anaconda.org/bioconda/linux-64/xopen-0.3.2-py27_0.tar.bz2", 
+  "version": "0.3.2"
+}

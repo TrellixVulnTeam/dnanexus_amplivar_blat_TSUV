@@ -1,0 +1,44 @@
+# This file created by conda-build 2.1.16
+# meta.yaml template originally from:
+# /opt/recipe, last modified Thu Nov 23 14:07:38 2017
+# ------------------------------------------------
+
+package:
+    name: xopen
+    version: 0.3.2
+source:
+    fn: xopen-0.3.2.tar.gz
+    md5: 1e8c7ec1ca903bd41483630280e6c2af
+    url: https://pypi.python.org/packages/63/7f/f18c758714d7f5714da95ef08eeacb04b6f9ef2e5853492c516cb979e4dc/xopen-0.3.2.tar.gz
+build:
+    noarch: ''
+    noarch_python: false
+    script: $PYTHON setup.py install
+    string: py27_0
+requirements:
+    build:
+        - ca-certificates 2017.11.5 0
+        - tk 8.5.19 2
+        - setuptools 36.7.2 py27_0
+        - sqlite 3.13.0 1
+        - wheel 0.30.0 py_1
+        - pip 9.0.1 py27_0
+        - readline 6.2 0
+        - certifi 2017.11.5 py27_0
+        - ncurses 5.9 10
+        - openssl 1.0.2l 0
+        - bz2file 0.98 py27_0
+        - zlib 1.2.11 0
+        - python 2.7.14 1
+    run:
+        - bz2file
+        - python
+test:
+    imports:
+        - xopen
+about:
+    home: https://github.com/marcelm/xopen
+    license: MIT
+    summary: Open compressed files transparently in Python
+extra:
+    final: true
